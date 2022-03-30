@@ -1,17 +1,21 @@
-import './style/app.css';
+//import './style/app.css';
+import logo from '../assets/img/argentBankLogo.png'
+import {NavLink} from "react-router-dom";
 
 function SignIn() {
   return (
     <div className="App">
         <nav className="main-nav">
-            <a className="main-nav-logo" href="./index.html">
-                <img
-                    className="main-nav-logo-image"
-                    src="./img/argentBankLogo.png"
-                    alt="Argent Bank Logo"
-                />
-                <h1 className="sr-only">Argent Bank</h1>
-            </a>
+            <NavLink to='/'>
+                <a className="main-nav-logo" href="./index.html">
+                    <img
+                        className="main-nav-logo-image"
+                        src={logo}
+                        alt="Argent Bank Logo"
+                    />
+                    <h1 className="sr-only">Argent Bank</h1>
+                </a>
+            </NavLink>
             <div>
                 <a className="main-nav-item" href="./sign-in.html">
                     <i className="fa fa-user-circle"></i>
@@ -37,19 +41,15 @@ function SignIn() {
                     >Remember me</label
                     >
                     </div>
-                    <!-- PLACEHOLDER DUE TO STATIC SITE -->
-                    <a href="./user.html" className="sign-in-button">Sign In</a>
-                    <!-- SHOULD BE THE BUTTON BELOW -->
-                    <!-- <button class="sign-in-button">Sign In</button> -->
-                    <!--  -->
+
+                    <button className="sign-in-button">Sign In</button>
+
                 </form>
             </section>
         </main>
         <footer className="footer">
             <p className="footer-text">Copyright 2020 Argent Bank</p>
         </footer>
-
-        <script></script>
     </div>
   );
 }

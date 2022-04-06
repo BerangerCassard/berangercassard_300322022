@@ -1,8 +1,16 @@
 //import './style/app.css';
 import logo from '../assets/img/argentBankLogo.png'
 import {NavLink} from "react-router-dom";
+import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
 function SignIn() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const dispatch = useDispatch()
+    const userLogin = useSelector((state) => state.userLogin)
+    const {loading, error, userInfo} = userLogin
+
   return (
     <div className="App">
         <nav className="main-nav">
@@ -27,7 +35,7 @@ function SignIn() {
             <section className="sign-in-content">
                 <i className="fa fa-user-circle sign-in-icon"></i>
                 <h1>Sign In</h1>
-                <form>
+                <form action='http://localhost:3000/user'>
                     <div className="input-wrapper">
                         <label htmlFor="username">Username</label
                         ><input type="text" id="username"/>
@@ -41,9 +49,7 @@ function SignIn() {
                     >Remember me</label
                     >
                     </div>
-
-                    <button className="sign-in-button">Sign In</button>
-
+                    <button type='submit' className="sign-in-button">Sign In</button>
                 </form>
             </section>
         </main>
